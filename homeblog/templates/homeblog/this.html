@@ -1,0 +1,49 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HEllo</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+     {% for x in categories %}
+
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'category_content' x.slug %}">{{ x.name }} <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+      {% endfor %}
+  </div>
+    <div>
+        {% if category %}
+            {% for x in content %}
+                <h1>{{ x.item_name }}</h1>
+                <h1>{{ x.address }}</h1>
+
+            {% endfor %}
+        {% else %}
+            {% for x in content %}
+
+                <h1>{{ x.address }}</h1>
+                <h1>{{ x.item_name }}</h1>
+            {% endfor %}
+
+        {% endif %}
+
+    </div>
+
+</nav>
+
+
+
+
+</body>
+
+
+</html>

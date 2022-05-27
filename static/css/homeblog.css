@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding-top: 0px;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: darkred;
+}
+.header{
+    background-color: darkred;
+}
+.category_titel a {
+    color: #3c3c3c;
+    font-size: 50px;
+    padding-left: 20px;
+
+}

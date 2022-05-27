@@ -1,0 +1,431 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% load static %}
+
+
+
+    <!-- main-slider -->
+    <div class="skdslider">
+        <ul id="demo1" class="slides">
+            <li style="position: absolute; left: 0px; top: 0px; bottom: 0px; right: 0px; display: none;">
+                <img src="/static/supermarket/images/nike.jpg" alt="" style="height: auto;width: auto">
+                <!--Slider Description example-->
+                <div class="slide-desc">
+                    <h3>Buy Rice Products Are Now On Line With Us</h3>
+                </div>
+            </li>
+            <li style="position: absolute; left: 0px; top: 0px; bottom: 0px; right: 0px; display: none;">
+                <img src="/static/supermarket/images/amazon.jpg" alt="">
+                <div class="slide-desc">
+                    <h3>Whole Spices Products Are Now On Line With Us</h3>
+                </div>
+            </li>
+            <li style="position: absolute; left: 0px; top: 0px; bottom: 0px; right: 0px; display: list-item;">
+                <img src="/static/supermarket/images/daraz.jpg" alt="">
+                <div class="slide-desc">
+                    <h3>Whole Spices Products Are Now On Line With Us</h3>
+                </div>
+            </li>
+        </ul>
+        <ul class="slide-navs" style="margin-left: -24px;">
+            <li class="slide-nav-0"><a></a></li>
+            <li class="slide-nav-1 current-slide"><a></a></li>
+            <li class="slide-nav-2"><a></a></li>
+        </ul>
+        <a class="prev"></a><a class="next"></a><a class="play-control pause" style="display: none;"></a></div>>
+    <!-- //main-slider -->
+    <!-- //top-header and slider -->
+    <!---728x90--->
+
+    <!-- top-brands -->
+    <div class="top-brands">
+        <div class="container">
+            <h2>Top selling offers</h2>
+            <div class="grid_3 grid_5">
+                <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="myTab" class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#expeditions" id="expeditions-tab" role="tab"
+                                                                  data-toggle="tab" aria-controls="expeditions"
+                                                                  aria-expanded="true">Advertised offers</a></li>
+                        <li role="presentation"><a href="#tours" role="tab" id="tours-tab" data-toggle="tab"
+                                                   aria-controls="tours">Today Offers</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="expeditions"
+                             aria-labelledby="expeditions-tab">
+                            <div class="agile-tp">
+                                <h5>Advertised this week</h5>
+                                <p class="w3l-ad">We've pulled together all our advertised offers into one place, so you
+                                    won't miss out on a great deal.</p>
+                            </div>
+
+                            <div class="agile_top_brands_grids">
+                                {% for x in page %}
+                                    <div class="col-md-4 top_brand_left">
+                                        <div class="hover14 column">
+
+                                            <div class="agile_top_brand_left_grid">
+                                                <div class="agile_top_brand_left_grid_pos">
+                                                    <img src="/static/supermarket/images/offer.png" alt=" "
+                                                         class="img-responsive">
+                                                </div>
+
+                                                <div class="agile_top_brand_left_grid1">
+                                                    <figure>
+                                                        <div class="snipcart-item block">
+                                                            <div class="snipcart-thumb">
+                                                                <a href="
+                                                                   {% if user.is_authenticated %}
+                                                                         {{ x.item_domain }}
+                                                                            {% else %}
+
+                                                                    {% url 'login' %}
+                                                                    {% endif %}"><img height="200px"
+
+                                                                                      width="200px"
+                                                                                      title=" " alt=" "
+                                                                                      src="{{ x.image.url }}"></a>
+                                                                <p>{{ x.item_name }}</p>
+                                                                <div class="stars">
+                                                                    <h1>{{ x.company }}</h1>
+                                                                </div>
+                                                                <h4>{{ x.offer_tag }} <span>$35.00</span></h4>
+                                                            </div>
+
+                                                        </div>
+                                                    </figure>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <div class="clearfix"></div>
+
+                            </div>
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tours" aria-labelledby="tours-tab">
+                            <div class="agile-tp">
+                                <h5>This week</h5>
+                                <p class="w3l-ad">We've pulled together all our advertised offers into one place, so you
+                                    won't miss out on a great deal.</p>
+                            </div>
+                            <div class="agile_top_brands_grids">
+
+                                <div class="col-md-4 top_brand_left">
+                                    <div class="hover14 column">
+                                        <div class="agile_top_brand_left_grid">
+                                            <div class="agile_top_brand_left_grid_pos">
+                                                <img src="/static/supermarket/images/offer.png" alt=" "
+                                                     class="img-responsive">
+                                            </div>
+                                            <div class="agile_top_brand_left_grid1">
+                                                <figure>
+                                                    <div class="snipcart-item block">
+                                                        <div class="snipcart-thumb">
+                                                            <a href="products.html"><img title=" " alt=" "
+                                                                                         src="/static/supermarket/images/8.png"></a>
+                                                            <p>Milky-mist-paneer</p>
+                                                            <div class="stars">
+                                                                <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                                                <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                                                <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                                                <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                                                <i class="fa fa-star gray-star" aria-hidden="true"></i>
+                                                            </div>
+                                                            <h4>$30.99 <span>$45.00</span></h4>
+                                                        </div>
+                                                        <div class="snipcart-details top_brand_home_details">
+                                                            <form action="#" method="post">
+                                                                <fieldset>
+                                                                    <input type="hidden" name="cmd" value="_cart">
+                                                                    <input type="hidden" name="add" value="1">
+                                                                    <input type="hidden" name="business" value=" ">
+                                                                    <input type="hidden" name="item_name"
+                                                                           value="basmati rise">
+                                                                    <input type="hidden" name="amount" value="30.99">
+                                                                    <input type="hidden" name="discount_amount"
+                                                                           value="1.00">
+                                                                    <input type="hidden" name="currency_code"
+                                                                           value="USD">
+                                                                    <input type="hidden" name="return" value=" ">
+                                                                    <input type="hidden" name="cancel_return" value=" ">
+                                                                    <input type="submit" name="submit"
+                                                                           value="Add to cart"
+                                                                           class="button">
+                                                                </fieldset>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="numbering" style="margin:0px 520px 10px 0px">
+                    <ul class="pagination paging">
+                        {% if page.has_previous %}
+                            <li>
+                                <a href="?page={{ page.previous_page_number }}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% for pg in page.paginator.page_range %}
+                            {% if page.number == pg %}
+                                <li class="active"><a href="?page={{ pg }}">{{ pg }}<span
+                                        class="sr-only">(current)</span></a></li>
+                            {% else %}
+                                <li><a href="?page={{ pg }}">{{ pg }}</a></li>
+                            {% endif %}
+
+                        {% endfor %}
+
+                        {% if page.has_next %}
+                            <li>
+                                <a href="?page={{ page.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- //top-brands -->
+    <!---728x90--->
+    <!-- Carousel
+       ================================================== -->
+
+
+
+    <!---728x90--->
+    <!--brands-->
+    <div class="brands">
+        <div class="container">
+            <h3>Our Brand Companies </h3>
+            <div class="brands-agile">
+                {% for x in companies %}
+                    <div class="col-md-2 w3layouts-brand">
+                        <div class="brands-w3l">
+                            <p><a href="{{ x.domain }}">{{ x.name }}</a></p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!--//brands-->
+    <!-- new -->
+    <!--
+<div class="newproducts-w3agile">
+    <div class="container">
+        <h3>New offers</h3>
+        <div class="agile_top_brands_grids">
+            <div class="col-md-3 top_brand_left-1">
+                <div class="hover14 column">
+                    <div class="agile_top_brand_left_grid">
+                        <div class="agile_top_brand_left_grid_pos">
+                            <img src="{% static 'supermarket/images/offer.png' %}" alt=" " class="img-responsive">
+                        </div>
+                        <div class="agile_top_brand_left_grid1">
+                            <figure>
+                                <div class="snipcart-item block">
+                                    <div class="snipcart-thumb">
+                                        <a href="products.html"><img title=" " alt=" "
+                                                                     src="{% static 'supermarket/images/14.png' %}"></a>
+                                        <p>Fried-gram</p>
+                                        <div class="stars">
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star gray-star" aria-hidden="true"></i>
+                                        </div>
+                                        <h4>$35.99 <span>$55.00</span></h4>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details">
+                                        <form action="#" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart">
+                                                <input type="hidden" name="add" value="1">
+                                                <input type="hidden" name="business" value=" ">
+                                                <input type="hidden" name="item_name" value="Fortune Sunflower Oil">
+                                                <input type="hidden" name="amount" value="35.99">
+                                                <input type="hidden" name="discount_amount" value="1.00">
+                                                <input type="hidden" name="currency_code" value="USD">
+                                                <input type="hidden" name="return" value=" ">
+                                                <input type="hidden" name="cancel_return" value=" ">
+                                                <input type="submit" name="submit" value="Add to cart" class="button">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 top_brand_left-1">
+                <div class="hover14 column">
+                    <div class="agile_top_brand_left_grid">
+                        <div class="agile_top_brand_left_grid_pos">
+                            <img src="{% static 'supermarket/images/offer.png' %}" alt=" " class="img-responsive">
+                        </div>
+                        <div class="agile_top_brand_left_grid1">
+                            <figure>
+                                <div class="snipcart-item block">
+                                    <div class="snipcart-thumb">
+                                        <a href="products.html"><img title=" " alt=" "
+                                                                     src="{% static 'supermarket/images/15.png' %}"></a>
+                                        <p>Navaratan-dal</p>
+                                        <div class="stars">
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star gray-star" aria-hidden="true"></i>
+                                        </div>
+                                        <h4>$30.99 <span>$45.00</span></h4>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details">
+                                        <form action="#" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart">
+                                                <input type="hidden" name="add" value="1">
+                                                <input type="hidden" name="business" value=" ">
+                                                <input type="hidden" name="item_name" value="basmati rise">
+                                                <input type="hidden" name="amount" value="30.99">
+                                                <input type="hidden" name="discount_amount" value="1.00">
+                                                <input type="hidden" name="currency_code" value="USD">
+                                                <input type="hidden" name="return" value=" ">
+                                                <input type="hidden" name="cancel_return" value=" ">
+                                                <input type="submit" name="submit" value="Add to cart" class="button">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 top_brand_left-1">
+                <div class="hover14 column">
+                    <div class="agile_top_brand_left_grid">
+                        <div class="agile_top_brand_left_grid_pos">
+                            <img src="{% static 'supermarket/images/offer.png' %}" alt=" " class="img-responsive">
+                        </div>
+                        <div class="agile_top_brand_left_grid_pos">
+                            <img src="{% static 'supermarket/images/offer.png' %}" alt=" " class="img-responsive">
+                        </div>
+                        <div class="agile_top_brand_left_grid1">
+                            <figure>
+                                <div class="snipcart-item block">
+                                    <div class="snipcart-thumb">
+                                        <a href="products.html"><img src="{% static 'supermarket/images/16.png' %}" alt=" " class="img-responsive"></a>
+                                        <p>White-peasmatar</p>
+                                        <div class="stars">
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star gray-star" aria-hidden="true"></i>
+                                        </div>
+                                        <h4>$80.99 <span>$105.00</span></h4>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details">
+                                        <form action="#" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart">
+                                                <input type="hidden" name="add" value="1">
+                                                <input type="hidden" name="business" value=" ">
+                                                <input type="hidden" name="item_name" value="Pepsi soft drink">
+                                                <input type="hidden" name="amount" value="80.00">
+                                                <input type="hidden" name="discount_amount" value="1.00">
+                                                <input type="hidden" name="currency_code" value="USD">
+                                                <input type="hidden" name="return" value=" ">
+                                                <input type="hidden" name="cancel_return" value=" ">
+                                                <input type="submit" name="submit" value="Add to cart" class="button">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 top_brand_left-1">
+                <div class="hover14 column">
+                    <div class="agile_top_brand_left_grid">
+                        <div class="agile_top_brand_left_grid_pos">
+                            <img src="{% static 'supermarket/images/offer.png' %}" alt=" " class="img-responsive">
+                        </div>
+                        <div class="agile_top_brand_left_grid1">
+                            <figure>
+                                <div class="snipcart-item block">
+                                    <div class="snipcart-thumb">
+                                        <a href="products.html"><img title=" " alt=" " src="{% static 'supermarket/images/17.png' %}"></a>
+                                        <p>Channa-dal</p>
+                                        <div class="stars">
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star blue-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star gray-star" aria-hidden="true"></i>
+                                        </div>
+                                        <h4>$35.99 <span>$55.00</span></h4>
+                                    </div>
+                                    <div class="snipcart-details top_brand_home_details">
+                                        <form action="#" method="post">
+                                            <fieldset>
+                                                <input type="hidden" name="cmd" value="_cart">
+                                                <input type="hidden" name="add" value="1">
+                                                <input type="hidden" name="business" value=" ">
+                                                <input type="hidden" name="item_name" value="Fortune Sunflower Oil">
+                                                <input type="hidden" name="amount" value="35.99">
+                                                <input type="hidden" name="discount_amount" value="1.00">
+                                                <input type="hidden" name="currency_code" value="USD">
+                                                <input type="hidden" name="return" value=" ">
+                                                <input type="hidden" name="cancel_return" value=" ">
+                                                <input type="submit" name="submit" value="Add to cart" class="button">
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+-->
+
+    <!-- //new -->
+    <!-- //footer -->
+
+{% endblock body %}
