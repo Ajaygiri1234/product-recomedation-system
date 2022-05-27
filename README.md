@@ -1,1 +1,1 @@
-This project uses  kmean clustering  to create cluster and recommend the grocery product to the user based of item similarity and user similarity
+This project uses  kmean clustering to create cluster and recommend the grocery product to the user based of item similarity and user similarity
